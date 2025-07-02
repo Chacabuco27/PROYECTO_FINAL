@@ -1,3 +1,12 @@
+
+
+# Este comando sirve para ejecutar un script de Python en Streamlit.
+# Pero se ejecuta en la terminal de tu computadora, no en Jupyter Notebook.
+# OJO: Debes antes tener instalado Streamlit en tu computadora, debes antes definir la ruta de tus archivos y 
+##     tener un script de Python (your_script.py) que quieras ejecutar en Streamlit.
+# streamlit run your_script.py
+# python -m streamlit run music.py
+
 import streamlit as st
 import pandas as pd
 
