@@ -9,12 +9,23 @@
 
 import streamlit as st
 import pandas as pd
+from streamlit_option_menu import option_menu
+
 
 # Cargar archivo
 df = pd.read_csv("artistas.csv")
 
 # Corregir nombre de columna con espacio extra
 df.rename(columns={"artista _musical": "artista_musical"}, inplace=True)
+
+# st.sidebar.image("nombre del logo", use_container_width=True)
+
+
+with st.sidebar:
+    selected = option_menu("Menú Principal", ["Inicio", 'Descubre','Tendencias', 'Géneros', 'Aportes'], 
+        icons=['house', 'search', 'trending-up', 'music','handshake'], menu_icon="cast", default_index=1)
+    selected
+
 
 # Selector de géneros múltiples
 generos_disponibles = sorted(set(g for sub in df['género_musical'].dropna().str.split('|') for g in sub))
